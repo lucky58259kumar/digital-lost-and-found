@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Lost & Found</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        .search-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 75%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 14px 25px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .item {
+            background: white;
+            margin-top: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .item h2 {
+            margin-top: 0;
+        }
+
+        .no-results {
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔍 Search Lost & Found</h1>
+    <p>Find items reported by students</p>
+</header>
+
+<div class="container">
+
+    <div class="search-box">
+
+        <form method="POST" action="/search">
+
+            <input
+                type="text"
+                name="keyword"
+                placeholder="Search for wallet, phone, books, library..."
+                required
+            >
+
+            <button type="submit">Search</button>
+
+        </form>
+
+    </div>
+
+
+    {% if items %}
+
+        {% for item in items %}
+
+        <div class="item">
+
+            <h2>{{ item["item_name"] }}</h2>
+
+            <p>
+                <strong>Category:</strong>
+                {{ item["category"] }}
+            </p>
+
+            <p>
+                <strong>Description:</strong>
+                {{ item["description"] }}
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                {{ item["location"] }}
+            </p>
+
+            <p>
+                <strong>Date Lost:</strong>
+                {{ item["date_lost"] }}
+            </p>
+
+            <p>
+                <strong>Contact:</strong>
+                {{ item["contact"] }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    {% elif request.method == "POST" %}
+
+        <div class="no-results">
+            <h2>No items found 😕</h2>
+            <p>Try searching with another keyword.</p>
+        </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

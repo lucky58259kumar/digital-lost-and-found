@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Lost Item</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+        }
+
+        header {
+            background-color: #1f2937;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .form-container {
+            width: 60%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            margin-top: 25px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🔴 Report Lost Item</h1>
+        <p>Help us help you find your belongings.</p>
+    </header>
+
+    <div class="form-container">
+
+        <form method="POST" action="/lost">
+
+            <label>Item Name</label>
+            <input type="text" name="item_name" placeholder="Example: Black Wallet">
+
+            <label>Category</label>
+            <select name="category">
+                <option>Electronics</option>
+                <option>Books</option>
+                <option>Clothing</option>
+                <option>Wallet / ID</option>
+                <option>Keys</option>
+                <option>Other</option>
+            </select>
+
+            <label>Description</label>
+            <textarea name="description" placeholder="Describe the item..."></textarea>
+
+            <label>Where did you lose it?</label>
+            <input type="text" name="location" placeholder="Example: Library, 2nd Floor">
+
+            <label>Date Lost</label>
+            <input type="date" name="date_lost">
+
+            <label>Contact Information</label>
+            <input type="text" name="contact" placeholder="Phone or Email">
+
+            <button type="submit">Submit Lost Item</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>a

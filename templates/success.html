@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Item Reported Successfully</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #dbe4ee;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 70px auto;
+            padding: 20px;
+        }
+
+        .success-box {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #1f2937;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .message {
+            color: #667085;
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .home-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .search-btn {
+            background: #10b981;
+            color: white;
+        }
+
+        a:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🔎 Campus Lost & Found</h1>
+        <p>Helping students find what they have lost</p>
+    </header>
+
+    <div class="container">
+
+        <div class="success-box">
+
+            <div class="icon">✅</div>
+
+            <h2>Lost Item Reported!</h2>
+
+            <p class="message">
+                Your lost item has been successfully submitted.
+                Other students can now search for this item on the
+                Campus Lost & Found system.
+            </p>
+
+            <div class="buttons">
+
+                <a href="/" class="home-btn">
+                    🏠 Back to Home
+                </a>
+
+                <a href="/search" class="search-btn">
+                    🔍 Search Lost Items
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Campus Lost & Found</p>
+    </footer>
+
+</body>
+</html>
